@@ -48,6 +48,22 @@ public class programa {
 		System.out.println("");
 		System.out.println("Pontos por escolaridade: " + escpts);
 		System.out.println("Pontos por experiência: " + exppts);
+
+	// RESULTADO FINAL
+		System.out.println("");
+		System.out.println("Você está habilitado para o(s) seguinte(s) cargo(s):");
+		
+		if ((escolaridade>=2) && ((habilitacao == 's')||(habilitacao == 'S'))){
+			System.out.println("ASSISTENTE");
+		}else if((experiencia > 2) && (escolaridade >= 3)){
+			System.out.println("GERENTE");
+			if((experiencia > 5) && (escolaridade >= 3) && ((disponibilidade == 's')||(disponibilidade == 'S'))){
+				System.out.println("ANALISTA");
+			}
+		}else{
+			System.out.println("Infelizmente seu perfil não atende a empresa");
+		}
+		
 		sc.close();
 	}
 }
